@@ -41,7 +41,7 @@ A user to execute a command. No default value. Optional.
 A command to be executed. No default value. Obligatory.
 
 
-# debug
+## debug
 
 Set bash debug mode on. Default value is `0` ( do not set ).
 
