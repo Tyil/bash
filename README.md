@@ -20,7 +20,7 @@ Execute bash commands
 
     task_run %(
       task    => "server uptime",
-      plugin  => "bash-command",
+      plugin  => "bash",
       parameters => %(
         user      => 'root',
         command   => 'uptime',
