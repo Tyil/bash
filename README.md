@@ -40,6 +40,27 @@ A user to execute a command. No default value. Optional.
 
 A command to be executed. No default value. Obligatory.
 
+## expected_output
+
+This is optional parameter. Verify if command print something into stdout. This should be Perl5 regex string.
+
+Example:
+
+    $ sparrow plg run --param command="echo I AM OK" --param expect_stdout='I AM \S+'
+
+Or via sparrowdo:
+
+
+    task_run %(
+      task    => "server uptime",
+      plugin  => "bash",
+      parameters => %(
+        command   => 'uptime',
+        debug     => 0,
+        expect_stdout => '\d\d:\d\d:\d\d'
+      )
+    );
+    
 
 ## debug
 
