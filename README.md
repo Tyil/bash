@@ -40,7 +40,7 @@ A user to execute a command. No default value. Optional.
 
 A command to be executed. No default value. Obligatory.
 
-## expected_output
+## expect_stdout
 
 This is optional parameter. Verify if command print something into stdout. This should be Perl5 regex string.
 
