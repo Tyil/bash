@@ -12,5 +12,4 @@ else
   su --shell `which bash` --login -c "$command" $user || exit 1
 fi
 
-echo 'bash-command-done'
 

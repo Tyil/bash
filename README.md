@@ -35,7 +35,6 @@ Execute bash commands
 
 A user to execute a command. No default value. Optional.
 
-
 ## command
 
 A command to be executed. No default value. Obligatory.
