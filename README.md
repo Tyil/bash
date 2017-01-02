@@ -65,6 +65,22 @@ Or via sparrowdo:
 
 Set bash debug mode on. Default value is `0` ( do not set ).
 
+## passing environment variables
+
+Use envvars parameter. For example:
+
+    task_run %(
+      task    => "GET http resource",
+      plugin  => "bash",
+      parameters => %(
+        command   => 'curl https://sparrowhub.org',
+        envvars   => %(
+          http_proxy  => input_params('HttpProxy'),
+          https_proxy => input_params('HttpsProxy'),
+        )
+      )
+    );
+
 # Author
 
 [Alexey Melezhik](mailto:melezhik@gmail.com)
