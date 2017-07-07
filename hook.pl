@@ -5,7 +5,7 @@ if ($envvars){
 
 
   for my $e (keys %{$envvars}){
-    push @envvars, "export $e='".($envvars->{$e})."'; ";
+    push @envvars, "export $e=".($envvars->{$e})."; ";
   }
  
 }
