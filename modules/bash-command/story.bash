@@ -16,9 +16,9 @@ if test -z $user; then
 else
 
   if [[ $os == alpine ]]; then
-    su -s `which bash` -l -c "${envvars} ${command}" $user || exit 1
+    su -s `type -P bash` -l -c "${envvars} ${command}" $user || exit 1
   else
-    su --shell `which bash` --login -c "${envvars} ${command}" $user || exit 1
+    su --shell `type -P bash` --login -c "${envvars} ${command}" $user || exit 1
   fi
 fi
 
