@@ -17,15 +17,10 @@ Execute bash commands
 
     $ cat sparrowfile
 
-
-    task_run %(
-      task    => "server uptime",
-      plugin  => "bash",
-      parameters => %(
-        user      => 'root',
-        command   => 'uptime',
-        debug     => 1,
-      )
+    task-run "server uptime", "bash", %(
+      user      => 'root',
+      command   => 'uptime',
+      debug     => 1,
     );
 
 
@@ -50,14 +45,10 @@ Example:
 Or via sparrowdo:
 
 
-    task_run %(
-      task    => "server uptime",
-      plugin  => "bash",
-      parameters => %(
-        command   => 'uptime',
-        debug     => 0,
-        expect_stdout => '\d\d:\d\d:\d\d'
-      )
+    task-run "server uptime", "bash", %(
+      command   => 'uptime',
+      debug     => 0,
+      expect_stdout => '\d\d:\d\d:\d\d'
     );
     
 
@@ -69,17 +60,17 @@ Set bash debug mode on. Default value is `0` ( do not set ).
 
 Use envvars parameter. For example:
 
-    task_run %(
-      task    => "GET http resource",
-      plugin  => "bash",
-      parameters => %(
-        command   => 'curl https://sparrowhub.org',
-        envvars   => %(
-          http_proxy  => input_params('HttpProxy'),
-          https_proxy => input_params('HttpsProxy'),
-        )
+    task-run "http GET request", "bash", %(
+      command   => 'curl https://sparrowhub.org',
+      envvars   => %(
+        http_proxy  => input_params('HttpProxy'),
+        https_proxy => input_params('HttpsProxy'),
       )
     );
+
+# cwd
+
+Change to `cwd` directory priorly
 
 # Author
 
